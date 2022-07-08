@@ -1,8 +1,10 @@
+ 
+import re
 
-#Type the sentence to be evaluated
-
+matches=[]
 str = input()
 my_list = []
+
 
 def load_file():
     #Load the words from the file
@@ -11,26 +13,22 @@ def load_file():
         for l in file:
             my_list.append(l.strip())
 
+
 def matching():
 
+    joined_string = "|".join(my_list)
+    matches=re.findall(''.join(joined_string), str, re.IGNORECASE)
+    #print[matches]
+    a=matches
+    b=my_list
+    
     #everything to Lowercase
     a= [x.lower() for x in my_list]
 
     #a=my_list
-    sentence=str.lower()
-
-
-    #review matches
-    fullmatch= [x for x in a if x in sentence]
-
-    #save matches to variable
-    b=fullmatch
-    # print(my_list)
-    #print(b)
-
-    #assert if matches mtach words and length
+    b= [x.lower() for x in matches]
+    
     print (set(a) == set(b) and len(a) == len(b))
-
-
+    
 load_file()
 matching()

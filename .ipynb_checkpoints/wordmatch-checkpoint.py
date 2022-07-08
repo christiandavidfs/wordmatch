@@ -28,7 +28,7 @@ def matching():
     # print(my_list)
     #print(b)
 
-    #assert if matches mtach words and length
+    #assert if matches match words and length
     print (set(a) == set(b) and len(a) == len(b))
 
 
